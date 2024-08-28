@@ -1,17 +1,18 @@
 #include <iostream>
 #include <thread>
 #include <chrono>
-#include <string>
+#include <sstream>
+#include <locale>
 using namespace std;
 
 string getAnswer(string action) {
     return "\nSTATUS: Anda memutuskan untuk " + action + "\n\n";
 }
 std::string formatNumber(int number) {
-    std::string numStr = std::to_string(number);
-    int len = numStr.length();
-    if (len > 3) numStr.insert(len - 3, ".");
-    return numStr;
+    stringstream ss;
+    ss.imbue(std::locale(""));
+    ss << number;
+    return ss.str();
 }
 int main() {
     int choice;
@@ -20,6 +21,7 @@ int main() {
 
     cout << "Apakah anda ingin pergi ke toko sepatu? (1 [Yes] / 0 [No]): ";
     cin >> choice;
+    cout << getAnswer(choice == 1 ? "ingin pergi ke toko sepatu" : "tidak ingin kemana mana");
 
     if (choice == 1) {
         cout << "Anda ingin menggunakan apa ke toko sepatu? (1 [Grab] / 0 [Jalan Kaki]): ";
@@ -46,6 +48,10 @@ int main() {
         cout << getAnswer(choice == 1 ? "membeli sepatu" : "tidak membeli sepatu");
 
         if (choice == 1) {
+            cout << "Jasa pengiriman apa yang anda pilih apakah JNE atau JNT? (1 [JNE] / 0 [JNT]): ";
+            cin >> choice;
+            cout << getAnswer(choice == 1 ? "menggunakan JNE untuk jasa pengiriman" : "menggunakan JNT untuk jasa pengiriman");
+
             cout << "\nSTATUS: Pembungkusan Sepatu. est 3 sec.\n\n";
             this_thread::sleep_for(chrono::seconds(3));
             cout << "\nSTATUS: Pengiriman Sepatu. est 5 sec.\n\n";
