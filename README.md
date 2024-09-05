@@ -1,7 +1,7 @@
 # Flowchart-Buku-Hal-43
 
 # Link Flowchart:
-https://boardmix.com/app/share/CAE.CKufMyABKhBcxWUQNHNQ3Q3KzpFlryXuMAZAAQ/zmDTUM
+[KLIK UNTUK LIHAT FLOWCHAT](https://boardmix.com/app/share/CAE.CKufMyABKhBcxWUQNHNQ3Q3KzpFlryXuMAZAAQ/zmDTUM)
 
 # Anggota
 1. Aurelia Neisha Yonathan XI.2/04
